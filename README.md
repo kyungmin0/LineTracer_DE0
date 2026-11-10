@@ -155,10 +155,10 @@ DE0-Line-Tracer/
 │   └── LineTracer.vhd
 └── images/
     ├── MAP.jpg
+    ├── Pin_Planner.jpg
     ├── robot1.jpg
-    ├── robot2.jpg
-    ├── Robot3.jpg
-    └── Pin_Planner.jpg
+    ├── Robot2.jpg
+    └── Robot3.jpg
 ```
 
 ## 7. Results
