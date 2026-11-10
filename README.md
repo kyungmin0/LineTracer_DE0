@@ -11,7 +11,6 @@ DE0 FPGA 보드를 활용하여 VHDL로 제어하는 라인트레이서를 제�
 또한 FSM(Finite State Machine)을 활용하여 직선 및 곡선 주행, 정지, 회전, 경로 선택 등의 동작을 구현했으며, 7-Segment를 통해 주행 시간을 표시하도록 설계했습니다.
 
 - **Project:** Line Tracer
-- **Development Period:** 12/04 ~ 12/20
 - **Platform:** DE0 FPGA Board
 - **HDL:** VHDL
 - **Control Method:** Weighted Sensor Control, PWM, FSM
@@ -33,7 +32,7 @@ DE0 FPGA 보드를 활용하여 VHDL로 제어하는 라인트레이서를 제�
 | DE0 FPGA Board | 전체 주행 제어 및 신호 처리 |
 | IR Sensor (8-channel) | 검은색 라인 감지 |
 | DC Motor | 좌우 바퀴 구동 |
-| LM7805 | 12V 입력을 5V로 변환 |
+| LM7805(Regulator) | 12V 입력을 5V로 변환 |
 | TLP250 | PWM 모터 구동 신호 전달 |
 | Capacitor | 전원 안정화 |
 | Transistor | 센서 신호 처리 |
@@ -48,11 +47,11 @@ DE0 FPGA 보드를 활용하여 VHDL로 제어하는 라인트레이서를 제�
 
 ## 4. Software Architecture
 
-전체 제어 시스템은 VHDL로 구현했으며, 하나의 `Line_Tracer` 설계 내부에서 센서 처리, 모터 제어, FSM 및 시간 표시 기능을 수행합니다.
+전체 제어 시스템은 VHDL로 구현했으며, 하나의 `Line_Tracer` 설계 내부에서 센서 처리, 모터 제어, FSM 및 시간 표시 기능을 수행
 
 ### 4.1 Line Detection
 
-8개의 적외선 센서로부터 입력을 받아 검은색 라인을 인식합니다.
+8개의 적외선 센서로부터 입력을 받아 검은색 라인을 인식
 
 - 센서 입력은 8-bit `in_bit`으로 전달
 - 입력값이 `'0'`인 센서를 검은색 감지 상태로 처리
@@ -61,7 +60,7 @@ DE0 FPGA 보드를 활용하여 VHDL로 제어하는 라인트레이서를 제�
 
 ### 4.2 Weighted Sensor Control
 
-센서의 위치에 따라 서로 다른 가중치를 부여하고, 검은색 라인을 감지한 센서의 가중치를 합산하여 좌우 모터의 속도를 조절합니다.
+센서의 위치에 따라 서로 다른 가중치를 부여하고, 검은색 라인을 감지한 센서의 가중치를 합산하여 좌우 모터의 속도를 제어
 
 ```vhdl
 constant WEIGHT : weight_array_t :=
@@ -93,7 +92,7 @@ V_R = V_{standard} + V_{add} - W
 
 DE0 보드의 클럭을 기준으로 카운터를 증가시키고, 카운터와 각 모터의 속도 제어값을 비교하여 PWM 신호를 생성합니다.
 
-- 기본 클럭: 50MHz (보고서 기준)
+- 기본 클럭: 50MHz
 - PWM 카운터 주기: 50,000 클럭
 - PWM 주기: 약 1ms
 - 기본 주행 속도 제어값: 15,000
@@ -154,8 +153,6 @@ DE0-Line-Tracer/
 ├── README.md
 ├── src/
 │   └── LineTracer.vhd
-├── docs/
-│   └── project_report.pdf
 └── images/
     ├── robot.jpg
     ├── circuit.jpg
@@ -184,11 +181,6 @@ DE0-Line-Tracer/
 
 - FPGA Board: DE0
 - Hardware Description Language: VHDL
-- FPGA Design Tool: Quartus (버전 확인 필요)
+- FPGA Design Tool: Quartus 13.1
 - Clock Frequency: 50MHz
-
-## 9. References
-
-- Project Report: `docs/project_report.pdf`
-- Source Code: `src/LineTracer.vhd`
 
