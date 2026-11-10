@@ -154,9 +154,11 @@ DE0-Line-Tracer/
 ├── src/
 │   └── LineTracer.vhd
 └── images/
-    ├── robot.jpg
-    ├── circuit.jpg
-    └── operation.jpg
+    ├── MAP.jpg
+    ├── robot1.jpg
+    ├── robot2.jpg
+    ├── Robot3.jpg
+    └── Pin_Planner.jpg
 ```
 
 ## 7. Results
@@ -168,14 +170,6 @@ DE0-Line-Tracer/
 - PWM 기반 모터 구동
 - FSM 기반 직각 회전 및 분기 경로 선택
 - 7-Segment 기반 주행 시간 표시
-
-### Project Images
-
-<!-- 프로젝트 사진을 추가할 예정입니다. -->
-
-| Robot | Circuit | Operation |
-|---|---|---|
-| Robot Image | Circuit Image | Operation Image |
 
 ## 8. Development Environment
 
