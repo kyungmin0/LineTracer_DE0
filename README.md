@@ -72,9 +72,11 @@ constant speed_standard : integer := 15000;
 
 좌우 모터의 속도는 다음과 같이 계산합니다.
 
+$$
 \[
 V_L = V_{standard} + V_{add} + W
 \]
+$$
 
 \[
 V_R = V_{standard} + V_{add} - W
