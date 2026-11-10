@@ -33,7 +33,7 @@ DE0 FPGA 보드를 활용하여 VHDL로 제어하는 라인트레이서를 제�
 | IR Sensor (8-channel) | 검은색 라인 감지 |
 | DC Motor | 좌우 바퀴 구동 |
 | LM7805(Regulator) | 12V 입력을 5V로 변환 |
-| TLP250 | PWM 모터 구동 신호 전달 |
+| TLP250(IC) | PWM 모터 구동 신호 전달 |
 | Capacitor | 전원 안정화 |
 | Transistor | 센서 신호 처리 |
 | Variable Resistor | 센서 감도 조절 |
